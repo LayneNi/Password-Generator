@@ -20,6 +20,41 @@ var specialCharOption = confirm("Would you like special characters in your passw
 var finalCharacters = []
 // character count is used to count the number of selected characters in order to subtract the given number from the final characters which will include the randomly characters equating to the user selected length plus the gaurunteed characters selected by the user in the confirms
 var characterCount = 0
+// if statements meant to randomly generate 1 random character from the length of the given array and add it to the final character array
+// each time a character type is selected it adds 1 to character count to later subtract from total number of characters in the final characters array
+if (
+  lowercaseOption == true
+) { 
+  selectedCharacters = selectedCharacters.concat(lowercase)
+  finalCharacters.push(lowercase[Math.floor(Math.random() * lowercase.length)])
+  characterCount ++
+  console.log(selectedCharacters)
+} 
+if (
+  uppercaseOption == true
+) { 
+  selectedCharacters = selectedCharacters.concat(uppercase)
+  finalCharacters.push(uppercase[Math.floor(Math.random() * uppercase.length)])
+  characterCount ++
+  console.log(selectedCharacters)
+}
+if (
+  numbersOption == true
+) {
+  selectedCharacters = selectedCharacters.concat(numbers)
+  finalCharacters.push(numbers[Math.floor(Math.random() * numbers.length)])
+  characterCount ++
+  console.log(selectedCharacters)
+}
+if (
+  specialCharOption == true
+) {
+  selectedCharacters = selectedCharacters.concat(specialChar)
+  finalCharacters.push(specialChar[Math.floor(Math.random() * specialChar.length)])
+  characterCount ++
+  console.log(selectedCharacters)
+}
+
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
 
