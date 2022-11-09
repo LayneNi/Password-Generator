@@ -3,13 +3,23 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {
-
+// arrays listing possible character options
 var lowercase = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "="]
+var selectedCharacters = []
+// different prompts and confirms that user must interact with
+var passwordLength = prompt("How many characters would you like in your password? *Between 8 and 128*");
+var lowercaseOption = confirm("Would you like lowercase letters in your password?")
+var uppercaseOption = confirm("Would you like Uppercase letters in your password?")
+var numbersOption = confirm("Would you like numbers in your password?")
+var specialCharOption = confirm("Would you like special characters in your password?")
 
-
+// final characters is the array of the randomly selected characters
+var finalCharacters = []
+// character count is used to count the number of selected characters in order to subtract the given number from the final characters which will include the randomly characters equating to the user selected length plus the gaurunteed characters selected by the user in the confirms
+var characterCount = 0
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
 
