@@ -22,7 +22,9 @@ var finalCharacters = []
 // character count is used to count the number of selected characters in order to subtract the given number from the final characters which will include the randomly characters equating to the user selected length plus the gaurunteed characters selected by the user in the confirms
 var characterCount = 0
 // if statements meant to randomly generate 1 random character from the length of the given array and add it to the final character array
-// each time a character type is selected it adds 1 to character count to later subtract from total number of characters in the final characters array
+// (characterCount ++) each time a character type is selected it adds 1 to character count to later subtract from total number of characters in the final characters array
+// Math.random to get a random character everytime
+// only if statements with no else statements to ensure code runs each option
 if (
   lowercaseOption == true
 ) { 
@@ -59,12 +61,14 @@ if (
 // for loop used to keep randomly generated password within the length of characters selected by user
 // used to randomly gererate characters within the selected password length adding 1 character at a time each time it is repeated within that length
 // used to subtract the number of additional characters added by if statements by subtracting character count
+// .Math.floor to round down as to not lose our 0 indexed number
+
 for (var i=0; i<passwordLength - characterCount; i++){
   var random = Math.floor(Math.random() * selectedCharacters.length)
   finalCharacters.push(selectedCharacters[random])
 }
  console.log(finalCharacters)
-
+// .join to turn an array into a string
   return finalCharacters.join("")
 }
 
