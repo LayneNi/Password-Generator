@@ -8,6 +8,7 @@
 
 ## Usage
 
+![password-generator-screenshot](https://user-images.githubusercontent.com/116680523/201239736-6e2d5686-bf0c-4a17-a031-2f1002a34685.png)
 
 
 
